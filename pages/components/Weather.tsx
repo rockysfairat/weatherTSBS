@@ -40,14 +40,20 @@ export const Weather = ({
   console.log(foo);
 
   return (
-    <section>
-      <p>{temp}</p>
-      <p>{fl}</p>
-      <p>{weatherShort}</p>
-      <p>{weatherDesc}</p>
-      <p>Wind speed : {wind}</p>
-      <p>Sunrise: {sunrise}</p>
-      <p>Sunset: {sunset}</p>
+    <section className="flex">
+      <div className="rounded-lg flex flex-col items-center w-1/3 justify-center backdrop-blur ">
+        <p>{temp}</p>
+        <p>Feels like {fl}</p>
+      </div>
+      <div className="rounded-lg flex w-1/3 flex-col items-center justify-center backdrop-blur mx-4">
+        <p>{weatherShort}</p>
+        <p>{weatherDesc}</p>
+      </div>
+      <div className="rounded-lg flex w-1/3 flex-col  backdrop-blur">
+        <p>Wind speed : {wind}</p>
+        <p>Sunrise: {sunrise}</p>
+        <p>Sunset: {sunset}</p>
+      </div>
     </section>
   );
 };

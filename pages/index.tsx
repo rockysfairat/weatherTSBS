@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
+import axios from "axios";
 // NextJS components:
 import Head from "next/head";
 // Custom components:
-import { Weather } from "./components/Weather";
-import { Header } from "./components/Header";
-import axios from "axios";
-import { useDarkMode } from "../hooks/useDarkMode";
+import Weather from "./components/Weather";
+import Header from "./components/Header";
 
 const Home: NextPage = () => {
   // User Location:

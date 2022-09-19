@@ -11,7 +11,7 @@ type Weather = {
   timezone?: number | undefined;
 };
 
-export const Weather = ({
+export default function Weather({
   temperature,
   feelsLike,
   weatherShort,
@@ -20,7 +20,7 @@ export const Weather = ({
   sunset,
   wind,
   timezone,
-}: Weather) => {
+}: Weather) {
   const [temp, setTemp] = useState<string | number>("Loading...");
   const [fl, setFl] = useState<string | number>("Loading...");
 
@@ -74,4 +74,4 @@ export const Weather = ({
       </div>
     </section>
   );
-};
+}

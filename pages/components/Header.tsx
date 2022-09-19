@@ -8,7 +8,7 @@ type LocationData = {
   country?: string;
 };
 
-export const Header = ({ city, country }: LocationData) => {
+export default function Header({ city, country }: LocationData) {
   // Render user location:
   const gettingUserLocation = (city: string | undefined) => {
     if (!city) {
@@ -42,4 +42,4 @@ export const Header = ({ city, country }: LocationData) => {
       </button>
     </header>
   );
-};
+}

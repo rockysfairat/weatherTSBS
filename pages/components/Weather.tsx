@@ -8,6 +8,7 @@ type Weather = {
   sunrise?: number;
   sunset?: number;
   wind?: number;
+  timezone?: number | undefined;
 };
 
 export const Weather = ({
@@ -18,6 +19,7 @@ export const Weather = ({
   sunrise,
   sunset,
   wind,
+  timezone,
 }: Weather) => {
   const [temp, setTemp] = useState<string | number>("Loading...");
   const [fl, setFl] = useState<string | number>("Loading...");
@@ -29,7 +31,17 @@ export const Weather = ({
     if (feelsLike) {
       setFl(Math.round(feelsLike) + "°C");
     }
-  });
+  }, [temperature, feelsLike]);
+
+  // Sunrise and sunset:
+
+  const todaySunrise = new Date((timezone + sunrise!) * 1000)
+    .toTimeString()
+    .slice(0, 8);
+
+  const todaySunset = new Date((timezone + sunset!) * 1000)
+    .toTimeString()
+    .slice(0, 8);
 
   return (
     <section
@@ -51,9 +63,9 @@ export const Weather = ({
         <p>{weatherDesc}</p>
       </div>
       <div className="rounded-lg flex w-1/3 flex-col pl-2">
-        <p>Wind speed : {wind}</p>
-        <p>Sunrise: {sunrise}</p>
-        <p>Sunset: {sunset}</p>
+        <p>Wind speed : {wind} m/s</p>
+        <p>Sunrise: {todaySunrise}</p>
+        <p>Sunset: {todaySunset}</p>
       </div>
     </section>
   );

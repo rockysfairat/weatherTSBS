@@ -11,5 +11,5 @@ export function useDarkMode() {
     localStorage.setItem("theme", theme);
   }, [theme, colorTheme]);
 
-  return [colorTheme, setTheme];
+  return [colorTheme, setTheme] as const;
 }

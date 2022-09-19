@@ -31,25 +31,26 @@ export const Weather = ({
     }
   });
 
-  console.log(sunrise);
-
-  const t = new Date(sunrise);
-
-  const foo = t.toTimeString();
-
-  console.log(foo);
-
   return (
-    <section className="flex">
-      <div className="rounded-lg flex flex-col items-center w-1/3 justify-center backdrop-blur ">
+    <section
+      className="flex text-white
+     dark:[&>div]:backdrop-blur
+     dark:[&>div]:bg-slate-100 
+     dark:[&>div]:bg-opacity-30
+     [&>div]:backdrop-blur
+     [&>div]:bg-opacity-90
+     [&>div]:text-lg
+     [&>div]:bg-zinc-900"
+    >
+      <div className="rounded-lg flex flex-col items-center w-1/3 justify-center ">
         <p>{temp}</p>
         <p>Feels like {fl}</p>
       </div>
-      <div className="rounded-lg flex w-1/3 flex-col items-center justify-center backdrop-blur mx-4">
+      <div className="rounded-lg flex w-1/3 flex-col items-center justify-center mx-4">
         <p>{weatherShort}</p>
         <p>{weatherDesc}</p>
       </div>
-      <div className="rounded-lg flex w-1/3 flex-col  backdrop-blur">
+      <div className="rounded-lg flex w-1/3 flex-col pl-2">
         <p>Wind speed : {wind}</p>
         <p>Sunrise: {sunrise}</p>
         <p>Sunset: {sunset}</p>

@@ -39,13 +39,13 @@ export default function Weather({
     ((timezone !== undefined ? timezone : 0) + sunrise!) * 1000
   )
     .toTimeString()
-    .slice(0, 8);
+    .slice(0, 5);
 
   const todaySunset = new Date(
     ((timezone !== undefined ? timezone : 0) + sunset!) * 1000
   )
     .toTimeString()
-    .slice(0, 8);
+    .slice(0, 5);
 
   return (
     <section

@@ -57,7 +57,7 @@ export default function Weather({
      [&>div]:bg-opacity-90
      [&>div]:bg-zinc-900
      [&>div]:py-2
-     sm:[&>div]:text-lg"
+     sm:[&>div]:text-sm"
     >
       <div className="rounded-lg flex flex-col items-center w-1/3 justify-center transition-all">
         <p>{temp}</p>
